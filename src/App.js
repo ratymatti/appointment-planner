@@ -7,16 +7,23 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
   
+  const [contacts, setContacts] = useState([]);
+  const [appointments, setAppointments] = useState([]);
 
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
   };
 
-  /*
-  Implement functions to add data to
-  contacts and appointments
-  */
+  function addContact(name, phone, email) {
+    if (name && phone && email) {
+      setContacts(...contacts, {
+        name: name,
+        phone: phone,
+        email: email
+      });
+    }
+  }
 
   return (
     <>
