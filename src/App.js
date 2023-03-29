@@ -20,7 +20,8 @@ function App() {
       setContacts(...contacts, {
         name: name,
         phone: phone,
-        email: email
+        email: email,
+        id: new Date().valueOf()
       });
     }
   }
@@ -31,7 +32,8 @@ function App() {
         title: title,
         contact: contact,
         date: date,
-        time: time
+        time: time,
+        id: new Date().valueOf()
       });
     }
   }
