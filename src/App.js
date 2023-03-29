@@ -15,33 +15,31 @@ function App() {
     APPOINTMENTS: "/appointments",
   };
 
-  function addContact(name, phone, email) {
-    if (name && phone && email) {
-      setContacts([
-        ...contacts, 
-        {
-          name: name,
-          phone: phone,
-          email: email,
-          id: new Date().valueOf()
-        }
-      ]);
-    }
+//maybe refactor these functions later by doing validation with object as argument
+
+  function addContact({name, phone, email}) {
+    
+    setContacts([
+      ...contacts, {
+        name: name,
+        phone: phone,
+        email: email,
+        id: new Date().valueOf()
+      }
+    ]);
   }
 
-  function addAppointment(title, contact, date, time) {
-    if (title && contact && date && time) {
-      setAppointments([
-        ...appointments, 
-        {
-          title: title,
-          contact: contact,
-          date: date,
-          time: time,
-          id: new Date().valueOf()
-        }
-      ]);
-    }
+  function addAppointment({title, contact, date, time}) {
+    
+    setAppointments([
+      ...appointments, {
+        title: title,
+        contact: contact,
+        date: date,
+        time: time,
+        id: new Date().valueOf()
+      }
+    ]);
   }
 
   return (
