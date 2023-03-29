@@ -25,6 +25,17 @@ function App() {
     }
   }
 
+  function addAppointment(title, contact, date, time) {
+    if (title && contact && date && time) {
+      setAppointments(...appointments, {
+        title: title,
+        contact: contact,
+        date: date,
+        time: time
+      });
+    }
+  }
+
   return (
     <>
       <nav>
