@@ -3,7 +3,7 @@ import React from "react";
 export const ContactForm = (props) => {
 
   const handleChange = ({ target }) => {
-    const { name, value } = target;
+    const { value } = target;
     
     if (target.id === 'name') {
       props.setCurrentName(value);

@@ -24,12 +24,12 @@ export const ContactsPage = (props) => {
         alert('Please enter a email address.')  
       } else {
         props.addContact({name: currentName, phone: currentPhone, email: currentEmail});
-        setCurrentName('');
-        setCurrentPhone('');
-        setCurrentEmail('');
+        setCurrentName(''); setCurrentPhone(''); setCurrentEmail('');
       }
     }
   };
+  
+  //should add phone validation later.
 
   return (
     
