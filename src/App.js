@@ -15,7 +15,7 @@ function App() {
     APPOINTMENTS: "/appointments",
   };
 
-//maybe refactor these functions later by doing validation with object as argument
+//maybe refactor these functions later by doing validation with object as argument. done.
 
   function addContact({name, phone, email}) {
     

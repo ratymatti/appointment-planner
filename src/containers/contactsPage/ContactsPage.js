@@ -3,15 +3,20 @@ import { useState } from "react";
 
 export const ContactsPage = () => {
 
+
+
   const [currentName, setCurrentName] = useState('');
   const [currentPhone, setCurrentPhone] = useState('');
   const [currentEmail, setCurrentEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const duplicate = props.contacts.some(element => element.name === currentName);
-    if (!duplicate) {
-      addContact({name: currentName, phone: currentPhone, email: currentEmail});
+    const duplicate = this.props.contacts.some(element => element.name === currentName);
+
+    if (duplicate) {
+      alert('Name already in use. Choose different name.')  
+    } else {
+      this.props.addContact({name: currentName, phone: currentPhone, email: currentEmail});
       setCurrentName('');
       setCurrentPhone('');
       setCurrentEmail('');
@@ -26,7 +31,8 @@ export const ContactsPage = () => {
   return (
     <div>
       <section>
-        <h2>Add Contact</h2> 
+        <h2>Add Contact</h2>
+        
       </section>
       <hr />
       <section>
