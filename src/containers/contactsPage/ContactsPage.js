@@ -3,9 +3,7 @@ import { useState } from "react";
 import { ContactForm } from '../../components/contactForm/ContactForm';
 import { TileList } from '../../components/tileList/TileList';
 
-export const ContactsPage = () => {
-
-  const { contacts, addContact } = this.props;
+export const ContactsPage = (props) => {
 
   const [currentName, setCurrentName] = useState('');
   const [currentPhone, setCurrentPhone] = useState('');
@@ -13,24 +11,28 @@ export const ContactsPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const duplicate = contacts.some(element => element.name === currentName);
+    const duplicate = props.contacts.some(element => element.name === currentName);
 
     if (duplicate) {
       alert('Name already in use. Choose different name.')  
     } else {
-      addContact({name: currentName, phone: currentPhone, email: currentEmail});
-      setCurrentName('');
-      setCurrentPhone('');
-      setCurrentEmail('');
+      if (!currentName.length) {
+        alert('Please enter a name.')  
+      } else if (!currentPhone.length) {
+        alert('Please enter a phone number.')  
+      } else if (!currentEmail.length) {
+        alert('Please enter a email address.')  
+      } else {
+        props.addContact({name: currentName, phone: currentPhone, email: currentEmail});
+        setCurrentName('');
+        setCurrentPhone('');
+        setCurrentEmail('');
+      }
     }
   };
 
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
-
   return (
+    
     <div>
       <section>
         <h2>Add Contact</h2>
@@ -47,7 +49,7 @@ export const ContactsPage = () => {
       <section>
         <h2>Contacts</h2>
         <TileList
-          contacts={contacts} />
+          contacts={props.contacts}  />
       </section>
     </div>
   );
