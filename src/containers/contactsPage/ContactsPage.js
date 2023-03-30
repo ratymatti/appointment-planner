@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { ContactForm } from '../../components/contactForm/ContactForm';
+import { TileList } from '../../components/tileList/TileList';
 
 export const ContactsPage = () => {
 
-
+  const { contacts, addContact } = this.props;
 
   const [currentName, setCurrentName] = useState('');
   const [currentPhone, setCurrentPhone] = useState('');
@@ -11,12 +13,12 @@ export const ContactsPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const duplicate = this.props.contacts.some(element => element.name === currentName);
+    const duplicate = contacts.some(element => element.name === currentName);
 
     if (duplicate) {
       alert('Name already in use. Choose different name.')  
     } else {
-      this.props.addContact({name: currentName, phone: currentPhone, email: currentEmail});
+      addContact({name: currentName, phone: currentPhone, email: currentEmail});
       setCurrentName('');
       setCurrentPhone('');
       setCurrentEmail('');
@@ -32,11 +34,20 @@ export const ContactsPage = () => {
     <div>
       <section>
         <h2>Add Contact</h2>
-        
+        <ContactForm
+          currentName={currentName}
+          currentPhone={currentPhone}
+          currentEmail={currentEmail}
+          setCurrentName={setCurrentName}
+          setCurrentPhone={setCurrentPhone}
+          setCurrentEmail={setCurrentEmail}
+          handleSubmit={handleSubmit} />
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList
+          contacts={contacts} />
       </section>
     </div>
   );
