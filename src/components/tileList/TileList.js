@@ -7,8 +7,10 @@ export const TileList = (props) => {
     <div>
       {
         datalist.map(data => {
-          return <Tile key={data.id}
-                       data={data} />                   
+          return  <Tile
+                    className="tile-container"
+                    key={data.id}
+                    data={data} />                   
         })
       }
     </div>
