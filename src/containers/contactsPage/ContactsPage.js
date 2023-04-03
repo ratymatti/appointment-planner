@@ -29,7 +29,7 @@ export const ContactsPage = (props) => {
     }
   };
   
-  //should add phone validation later.
+  //should add phone validation later. at least regex that checks numbers and + only
 
   return (
     

@@ -5,9 +5,9 @@ export const TileList = (props) => {
   return (
     <div>
       {
-        props.contacts.map(element => {
-          return <Tile key={element.id}
-                       element={element}   />                   
+        props.contacts.map(data => {
+          return <Tile key={data.id}
+                       data={data}   />                   
         })
       }
     </div>

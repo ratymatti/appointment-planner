@@ -7,11 +7,11 @@ export const Tile = (props) => {
   return (
     <div className="tile-container">
       {
-        Object.keys(props.element).map(key => {
+        Object.keys(props.data).map(key => {
           if (key === 'id') {
             return null;
           }
-            return <p key={props.element.id}>{props.element[key]}</p>
+            return <p key={props.data.id}>{props.data[key]}</p>
         }) 
       }   
     </div>
