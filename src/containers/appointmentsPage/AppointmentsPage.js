@@ -6,15 +6,15 @@ import { TileList } from "../../components/tileList/TileList";
 export const AppointmentsPage = (props) => {
 
   const [currentTitle, setCurrentTitle] = useState('');
-  const [currentContact, setCurrentContact] = useState({});
-  const [currentDate, setCurrentDate] = useState('');
+  const [currentContact, setCurrentContact] = useState('');
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [currentTime, setCurrentTime] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
     props.addAppointment({title: currentTitle, contact: currentContact, date: currentDate, time: currentTime});
-    setCurrentTitle(''); setCurrentContact({}); setCurrentDate(''); setCurrentTime('');
+    setCurrentTitle(''); setCurrentContact(''); setCurrentDate(''); setCurrentTime('');
    
   };
 
