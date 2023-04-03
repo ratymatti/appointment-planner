@@ -13,7 +13,7 @@ export const AppointmentsPage = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    props.addAppointment({title: currentTitle, contact: currentContact, date: currentDate, time: currentTime});
+    props.addAppointment({title: currentTitle, contact: currentContact, date: currentDate.toLocaleDateString('en-GB'), time: currentTime});
     setCurrentTitle(''); setCurrentContact(''); setCurrentDate(''); setCurrentTime('');
    
   };
