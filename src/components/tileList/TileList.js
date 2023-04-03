@@ -2,10 +2,11 @@ import React from "react";
 import { Tile } from '../tile/Tile';
 
 export const TileList = (props) => {
+  const datalist = props.contacts ? props.contacts : props.appointments;
   return (
     <div>
       {
-        props.contacts.map(data => {
+        datalist.map(data => {
           return <Tile key={data.id}
                        data={data} />                   
         })
