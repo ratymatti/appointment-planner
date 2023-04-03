@@ -31,7 +31,8 @@ export const AppointmentsPage = (props) => {
           setCurrentContact={setCurrentContact}
           setCurrentDate={setCurrentDate}
           setCurrentTime={setCurrentTime}
-          handleSubmit={handleSubmit} />
+          handleSubmit={handleSubmit}
+          contacts={props.contacts} />
       </section>
       <hr />
       <section>
