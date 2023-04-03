@@ -7,7 +7,7 @@ export const TileList = (props) => {
       {
         props.contacts.map(data => {
           return <Tile key={data.id}
-                       data={data}   />                   
+                       data={data} />                   
         })
       }
     </div>
