@@ -13,16 +13,34 @@ export const AppointmentForm = (props) => {
     } else if (target.id === 'time') {
       props.setCurrentTime(value);
     }
-  }
+
+  };
 
   return (
     <form onSubmit={props.handleSubmit}>
       <h5>Title</h5>
-      <input type="text" id="title" placeholder="Enter title" value={props.currentTitle} onChange={handleChange} />
+      <input 
+        type="text"
+        id="title"
+        placeholder="Enter title"
+        value={props.currentTitle}
+        onChange={handleChange}
+        required />
       <h5>Date</h5>
-      <ReactDatePicker selected={props.currentDate} minDate={new Date()} dateFormat="dd/MM/yyyy" value={props.currentDate} onChange={(date) => props.setCurrentDate(date)} />
+      <ReactDatePicker
+        selected={props.currentDate}
+        minDate={new Date()}
+        dateFormat="dd/MM/yyyy"
+        value={props.currentDate}
+        onChange={(date) => props.setCurrentDate(date)}
+        required />
       <h5>Time</h5>
-      <input value={props.currentTime} type="time" id="time" onChange={handleChange} />
+      <input
+        value={props.currentTime}
+        type="time"
+        id="time"
+        onChange={handleChange}
+        required />
       <h5>Contact</h5>
       <ContactPicker 
         contacts={props.contacts}

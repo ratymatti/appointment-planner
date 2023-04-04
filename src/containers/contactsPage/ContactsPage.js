@@ -11,22 +11,16 @@ export const ContactsPage = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const duplicate = props.contacts.some(element => element.name === currentName);
 
     if (duplicate) {
       alert('Name already in use. Choose different name.')  
     } else {
-      if (!currentName.length) {
-        alert('Please enter a name.')  
-      } else if (!currentPhone.length) {
-        alert('Please enter a phone number.')  
-      } else if (!currentEmail.length) {
-        alert('Please enter a email address.')  
-      } else {
         props.addContact({name: currentName, phone: currentPhone, email: currentEmail});
         setCurrentName(''); setCurrentPhone(''); setCurrentEmail('');
-      }
     }
+
   };
   
   //should add phone validation later. at least regex that checks numbers and + only
