@@ -15,8 +15,6 @@ function App() {
     APPOINTMENTS: "/appointments",
   };
 
-//maybe refactor these functions later by doing validation with object as argument. done.
-
   function addContact({name, phone, email}) {
     
     setContacts([
@@ -58,13 +56,11 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-             {/* Add props to ContactsPage */}
             <ContactsPage
               contacts={contacts}
               addContact={addContact} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            {/* Add props to AppointmentsPage */}
             <AppointmentsPage
               appointments={appointments}
               contacts={contacts}
